@@ -179,6 +179,8 @@ Falls Ihr keine PiHole installation braucht, seid Ihr nun fertig ;) ansonsten...
 
  
 ## PiHole
+
+##### Installation
  
  Pihole wird ganz einfach über eine Zeile installiert:
  
@@ -213,11 +215,12 @@ cat > /etc/network/interfaces <<EOF
 source /etc/network/interfaces.d/*
 
 # The loopback network interface
-auto lo
+auto lo 
 iface lo inet loopback
 
 # The primary network interface
 allow-hotplug ETHDEV
+auto ETHDEV
 iface ETHDEV inet static
 	address IPADDR
   netmask NETMASK
@@ -226,3 +229,22 @@ EOF
 ```
 Öffnet die Datei /etc/network/interfaces nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein.<br>
 ![](screenshots/00015.png)
+
+danach einmal schnell das Netzwerk neustarten: 
+```bash 
+service networking restart
+````
+
+##### Konfiguration
+
+Die PiHole Konfiguration wird nun final über die Weboberfläche vorgenommen: 
+
+Hierzu müsst Ihr euch im Webinterfayce einloggen, das hier zu finden ist: 
+
+http://PI-IP/admin/index.php?login
+
+ersetzt IP mit der IP, die Ihr vorhin gesetzt habt.
+
+Mehr DNS Upstream Server hinzufügen: 
+http:///PI-IPadmin/settings.php?tab=dns
+![](screenshots/00012.png)
