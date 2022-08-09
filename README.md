@@ -1,5 +1,17 @@
+## Vorwort
+
+In diesem Tutorial gehen wir davon aus, dass Ihr einen Raspberry Pi oder ein ähnliches Gerät habt und auf diesem eine Installtion von DietPI (oder auch ein nacktes Debian) läuft.
+
+Eine Installationsanleitung von DietPi findet ihr [hier](https://dietpi.com/docs/install/)
+
+
+
 ### Installieren benötigter Pakete
 ```bash
+apt update
+apt upgrade -y
+apt dist-upgrade -y
+apt autoremove -y
 apt install -y wireguard net-tools tcpdump htop curl vim iptables
 ```
 
