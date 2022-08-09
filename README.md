@@ -1,6 +1,6 @@
 ## Vorwort
 
-In diesem Tutorial gehen wir davon aus, dass Ihr einen Raspberry Pi oder ein ähnliches Gerät habt und auf diesem eine Installtion von DietPI (oder auch ein nacktes Debian) läuft.
+In diesem Tutorial gehen wir davon aus, dass Ihr einen Raspberry Pi oder ein ähnliches Gerät habt und auf diesem eine Installtion von DietPI (oder auch ein nacktes Debian) läuft und ihr solltet per SSH als Benutzer root mit dem Gerät verbunden sein.
 
 Eine Installationsanleitung von DietPi findet ihr [hier](https://dietpi.com/docs/install/)
 
@@ -15,7 +15,7 @@ apt autoremove -y
 apt install -y wireguard net-tools tcpdump htop curl vim iptables
 ```
 
-### WireGuard einrichten
+## WireGuard
 
 #### Keys erstellen
 
@@ -51,7 +51,8 @@ Endpoint = SERVER
 EOF
 ```
 
-Öffnet die Datei nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein:
+Öffnet die Datei /etc/wireguard/wg0.conf nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein:
+![Beispiel](screenshots/00014.png)
 
 danach geht es weiter mit den Dateien für Firewall/routing:
 
@@ -174,3 +175,52 @@ wg-quick down wg0
 systemctl enable --now wg-quick@wg0.service
 ```
 
+Falls Ihr keine PiHole installation braucht, seid Ihr nun fertig ;) ansonsten...
+
+ 
+## PiHole
+ 
+ Pihole wird ganz einfach über eine Zeile installiert:
+ 
+ ```bash
+ curl -sSL https://install.pi-hole.net | bash
+ ```
+Wichtige Punkte der Installation sind hier als Screenshots: 
+![](screenshots/00002.png)
+![](screenshots/00003.png)
+![](screenshots/00004.png)
+![](screenshots/00005.png)
+![](screenshots/00006.png)
+![](screenshots/00007.png)
+![](screenshots/00008.png)
+![](screenshots/00009.png)
+![](screenshots/00010.png)
+
+Nach der Installation stehen wir das Gerät nnoch auf eine Feste IP um: 
+
+Gebt folgenden Befehl ein: 
+```bash
+ifconfig
+```
+danach
+```bash
+cat > /etc/network/interfaces <<EOF
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug ETHDEV
+iface ETHDEV inet static
+	address IPADDR
+  netmask NETMASK
+	gateway ROUTER
+EOF
+```
+Öffnet die Datei /etc/network/interfaces nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein.
+![](screenshots/00015.png)
