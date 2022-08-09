@@ -250,6 +250,7 @@ ersetzt IP mit der IP, die Ihr vorhin gesetzt habt.
 
 ##### Mehr DNS Upstream Server hinzufügen: 
 http:///PI-IPadmin/settings.php?tab=dns
+
 ![](screenshots/00011.png)
 
 
@@ -261,6 +262,7 @@ Da z.B. der Speedport standardmäßig über extrem lange Leasezeiten von z.B. 3 
 Setzt den Haken bei "DHCP server enabled" und legt eure Range der zu vergebenen IP-Adressen fest.
 
 http:///PI-IPadmin/admin/settings.php?tab=piholedhcp
+
 ![](screenshots/00012.png)
 
 fertig ;)
