@@ -254,6 +254,13 @@ http:///PI-IPadmin/settings.php?tab=dns
 
 
 ##### DHCP Server konfigurieren: 
+Wichtig ist es, dass ihr nun, kurz bevor ihr den DHCP-Server des PiHole aktiviert, den DHCP-Server eures Routers deaktiviert, damit ihr in eurem Netzwerk nurnoch einen DHCP-Server vorfindet
+und dieser auch von allen Geräten genutzt wird.
+
+Da z.B. der Speedport standardmäßig über extrem lange Leasezeiten von z.B. 3 Wochen verfügt, kann es sein, dass ihr, im Anschluss eurer Umstellung auf euren Geräten explizit eine neue IP vom DHCP anfordern müsst.
+Setzt den Haken bei "DHCP server enabled" und legt eure Range der zu vergebenen IP-Adressen fest.
 
 http:///PI-IPadmin/admin/settings.php?tab=piholedhcp
 ![](screenshots/00012.png)
+
+fertig ;)
