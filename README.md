@@ -97,7 +97,6 @@ cat > /etc/iptables/pre_up.rules <<EOF
 :OUTPUT ACCEPT [0:0]
 
 -A INPUT -i lo -j ACCEPT
--A INPUT -i w+ -j ACCEPT
 -A INPUT -i e+ -p icmp -j ACCEPT
 -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -i e+ -p tcp -m tcp -m multiport --dports 22,53,80 -j ACCEPT
