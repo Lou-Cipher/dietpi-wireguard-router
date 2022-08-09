@@ -51,7 +51,7 @@ Endpoint = SERVER
 EOF
 ```
 
-Öffnet die Datei /etc/wireguard/wg0.conf nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein:
+Öffnet die Datei /etc/wireguard/wg0.conf nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein:<br>
 ![Beispiel](screenshots/00014.png)
 
 danach geht es weiter mit den Dateien für Firewall/routing:
@@ -222,5 +222,5 @@ iface ETHDEV inet static
 	gateway ROUTER
 EOF
 ```
-Öffnet die Datei /etc/network/interfaces nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein.
+Öffnet die Datei /etc/network/interfaces nun in einem Editor (vim/nano...) und fügt an den richtigen Stellen anstatt den Platzhaltern eure Daten ein.<br>
 ![](screenshots/00015.png)
