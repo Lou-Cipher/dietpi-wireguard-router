@@ -98,10 +98,13 @@ cat > /etc/iptables/pre_up.rules <<EOF
 
 -A INPUT -i lo -j ACCEPT
 -A INPUT -i w+ -j ACCEPT
--A INPUT -i e+ -j ACCEPT
+-A INPUT -i e+ -p icmp -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -i e+ -p tcp -m tcp -m multiport --dports 22,53,80 -j ACCEPT
+-A INPUT -i e+ -p udp -m udp -m multiport --dports 53 -j ACCEPT
+-A INPUT -i e+ -p udp -m udp --sport 67:68 --dport 67:68 -j ACCEPT
 -A FORWARD -i e+ -o w+ -j ACCEPT
--A FORWARD -i w+ -o e+ -j ACCEPT
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A FORWARD -i w+ -o e+ -m state --state RELATED,ESTABLISHED -j ACCEPT
 COMMIT
 
 *nat
@@ -247,4 +250,9 @@ ersetzt IP mit der IP, die Ihr vorhin gesetzt habt.
 
 Mehr DNS Upstream Server hinzufügen: 
 http:///PI-IPadmin/settings.php?tab=dns
-![](screenshots/00013.png)
+![](screenshots/00011.png)
+
+
+DHCP Server konfigurieren: 
+http:///PI-IPadmin/admin/settings.php?tab=piholedhcp
+![](screenshots/00011.png)
