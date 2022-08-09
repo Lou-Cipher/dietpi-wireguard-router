@@ -247,4 +247,4 @@ ersetzt IP mit der IP, die Ihr vorhin gesetzt habt.
 
 Mehr DNS Upstream Server hinzufügen: 
 http:///PI-IPadmin/settings.php?tab=dns
-![](screenshots/00012.png)
+![](screenshots/00013.png)
