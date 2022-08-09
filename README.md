@@ -16,6 +16,8 @@ umask 077 ; wg genkey | tee client_privatekey | wg pubkey > client_publickey ; e
 den PublicKey kann man nun auf der OVPN Seite eintragen und eine WireGuard Konfiguration erstellen lassen...
 Bei OVPN im Webinterface einloggen und auf WireGuard/Konfigurationsdateien klicken. Hier an meinem Beispiel mit dem PublicKey 'JMBjhNdB/eAfdwoU2MrVMaMEmT0UbNltjgx62cCRwBE=' und einem Server aus Österreich. Bitte unten nur auf Konfiguration anzeigen klicken, wir brauchen nicht alles ;)
 
+![OVPN Webinterface](screenshots/00001.png)
+
 
 Auf dem Server legen wir nun eine wg0.conf an und befüllen diese:
 
