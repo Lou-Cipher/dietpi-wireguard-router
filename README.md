@@ -196,12 +196,14 @@ Wichtige Punkte der Installation sind hier als Screenshots:
 ![](screenshots/00009.png)
 ![](screenshots/00010.png)
 
-Nach der Installation stehen wir das Gerät nnoch auf eine Feste IP um: 
+Nach der Installation stellen wir das Gerät noch auf eine Feste IP um: 
 
 Gebt folgenden Befehl ein: 
 ```bash
 ifconfig
 ```
+und merkt euch die Daten ;)
+
 danach
 ```bash
 cat > /etc/network/interfaces <<EOF
