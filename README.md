@@ -183,7 +183,7 @@ Falls Ihr keine PiHole installation braucht, seid Ihr nun fertig ;) ansonsten...
  
 ## PiHole
 
-##### Installation
+#### Installation
  
  Pihole wird ganz einfach über eine Zeile installiert:
  
@@ -238,7 +238,7 @@ danach einmal schnell das Netzwerk neustarten:
 service networking restart
 ````
 
-##### Konfiguration
+#### Konfiguration
 
 Die PiHole Konfiguration wird nun final über die Weboberfläche vorgenommen: 
 
@@ -248,12 +248,12 @@ http://PI-IP/admin/index.php?login
 
 ersetzt IP mit der IP, die Ihr vorhin gesetzt habt.
 
-#### Mehr DNS Upstream Server hinzufügen: 
+##### Mehr DNS Upstream Server hinzufügen: 
 http:///PI-IPadmin/settings.php?tab=dns
 ![](screenshots/00011.png)
 
 
-#### DHCP Server konfigurieren: 
+##### DHCP Server konfigurieren: 
 
 http:///PI-IPadmin/admin/settings.php?tab=piholedhcp
 ![](screenshots/00012.png)
